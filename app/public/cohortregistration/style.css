@@ -1,12 +1,12 @@
 :root {
-    --brand-teal: #2a5c6b;
-    --brand-coral: #e88d8d;
-    --brand-dark: #2c3e50;
+    --brand-teal: #4297A0;
+    --brand-coral: #FE646F;
+    --brand-dark: #0F2C3E;
     --brand-muted: #51636f;
-    --bg-main: #f4ebe5;
-    --bg-card: rgba(255, 255, 255, 0.9);
-    --border-soft: #d6cbc5;
-    --border-strong: #e0d3cc;
+    --bg-main: #FDFDF9;
+    --bg-card: #ffffff;
+    --border-soft: #E7E2DA;
+    --border-strong: #E7E2DA;
     --white: #ffffff;
 }
 
@@ -18,11 +18,15 @@
 
 body {
     margin: 0;
-    background:
-        radial-gradient(circle at top left, rgba(232, 141, 141, 0.2), transparent 30%),
-        linear-gradient(180deg, #f8f1ec 0%, var(--bg-main) 45%, #f1e3db 100%);
+    background: var(--bg-main);
     color: var(--brand-dark);
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: "IBM Plex Sans", Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Barlow", Arial, sans-serif;
 }
 
 img {
@@ -86,13 +90,13 @@ img {
 }
 
 .page-content {
-    padding: 32px 16px 64px;
+    padding: 32px 24px 64px;
 }
 
 .container {
-    max-width: 650px;
+    max-width: 720px;
     margin: 0 auto 60px auto;
-    padding: 20px 40px;
+    padding: 32px 40px;
     background: transparent;
     box-shadow: none;
 }
@@ -150,7 +154,7 @@ textarea {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid var(--border-soft);
-    border-radius: 10px;
+    border-radius: 8px;
     background: var(--white);
     color: var(--brand-dark);
     font: inherit;
@@ -166,7 +170,7 @@ select:focus,
 textarea:focus {
     outline: none;
     border-color: var(--brand-teal);
-    box-shadow: 0 0 0 3px rgba(42, 92, 107, 0.15);
+    box-shadow: 0 0 0 3px rgba(66, 151, 160, 0.16);
 }
 
 .row {
@@ -245,9 +249,9 @@ textarea:focus {
     padding: 18px;
     overflow: hidden;
     border: 0;
-    border-radius: 12px;
+    border-radius: 8px;
     background: var(--brand-coral);
-    box-shadow: 0 12px 24px rgba(232, 141, 141, 0.28);
+    box-shadow: none;
     color: var(--white);
     cursor: pointer;
     font-size: 18px;
@@ -258,7 +262,7 @@ textarea:focus {
 #submitBtn:hover:not(:disabled),
 #submitBtn:focus-visible:not(:disabled) {
     transform: translateY(-1px);
-    box-shadow: 0 14px 28px rgba(232, 141, 141, 0.34);
+    box-shadow: none;
 }
 
 #submitBtn:disabled {
@@ -276,6 +280,7 @@ textarea:focus {
 }
 
 #submitBtn .button__filler {
+    display: none;
     position: absolute;
     top: -50%;
     left: -25%;
@@ -283,7 +288,7 @@ textarea:focus {
     width: 150%;
     height: 200%;
     border-radius: 50%;
-    background: #d97c7c;
+    background: #e8535f;
     transform: translate3d(0, -75%, 0);
 }
 
@@ -325,8 +330,7 @@ textarea:focus {
     }
 
     .container {
-        padding: 28px 18px 32px;
-        border-radius: 20px;
+        padding: 32px 0;
     }
 
     .hero h1 {
@@ -359,7 +363,7 @@ textarea:focus {
     }
 
     .page-content {
-        padding-inline: 12px;
+        padding-inline: 24px;
     }
 
     .row,

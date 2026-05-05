@@ -31,7 +31,7 @@
     }
   </style>
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" />
   <!-- Nucleo Icons -->
   <link href="{{asset('admin/assets/css/nucleo-icons.css')}}" rel="stylesheet" />
   <link href="{{asset('admin/assets/css/nucleo-svg.css')}}" rel="stylesheet" />

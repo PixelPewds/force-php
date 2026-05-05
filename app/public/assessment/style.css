@@ -1,18 +1,26 @@
 /* FORCE Brand Identity */
 :root {
-    --brand-teal: #2A5C6B;
-    --brand-coral: #E88D8D;
-    --brand-dark: #2C3E50;
-    --bg-main: #F4EBE5;
+    --brand-teal: #4297A0;
+    --brand-coral: #FE646F;
+    --brand-dark: #0F2C3E;
+    --brand-muted: #51636f;
+    --bg-main: #FDFDF9;
+    --border-soft: #E7E2DA;
     --white: #FFFFFF;
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
     padding: 0;
     margin: 0;
     background-color: var(--bg-main);
     color: var(--brand-dark);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Barlow', Arial, sans-serif;
 }
 
 /* --- NAVBAR STYLING --- */
@@ -75,9 +83,9 @@ body {
 
 /* --- FORM CONTAINER --- */
 .container {
-    max-width: 650px;
+    max-width: 720px;
     margin: 0 auto 60px auto;
-    padding: 20px 40px;
+    padding: 32px 40px;
     background: transparent;
     box-shadow: none;
 }
@@ -91,8 +99,8 @@ h2 {
 
 .sub-text {
     font-size: 16px;
-    color: #555;
-    margin-bottom: 40px;
+    color: var(--brand-muted);
+    margin-bottom: 16px;
     line-height: 1.5;
 }
 
@@ -100,9 +108,9 @@ h3 {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--brand-coral);
+    color: var(--brand-teal);
     margin: 40px 0 20px 0;
-    border-bottom: 1px solid #E0D3CC;
+    border-bottom: 1px solid var(--border-soft);
     padding-bottom: 10px;
 }
 
@@ -124,7 +132,7 @@ textarea {
     width: 100%;
     padding: 12px 15px;
     font-size: 15px;
-    border: 1px solid #D6CBC5;
+    border: 1px solid var(--border-soft);
     border-radius: 8px;
     background: var(--white);
     box-sizing: border-box;
@@ -137,7 +145,7 @@ select:focus,
 textarea:focus {
     outline: none;
     border-color: var(--brand-teal);
-    box-shadow: 0 0 0 3px rgba(42, 92, 107, 0.15);
+    box-shadow: 0 0 0 3px rgba(66, 151, 160, 0.16);
 }
 
 .row {
@@ -177,7 +185,7 @@ textarea:focus {
     display: inline-block;
     width: 20px;
     height: 20px;
-    border: 2px solid #D6CBC5;
+    border: 2px solid var(--border-soft);
     border-radius: 6px;
     background-color: var(--white);
     margin-right: 12px;
@@ -224,7 +232,7 @@ button#submitBtn {
     cursor: pointer;
     margin-top: 40px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(232, 141, 141, 0.3);
+    box-shadow: none;
 
     /* Required for the new animation */
     overflow: hidden;
@@ -242,7 +250,8 @@ button#submitBtn {
 }
 
 #submitBtn .button__filler {
-    background: #D97C7C;
+    display: none;
+    background: #e8535f;
     position: absolute;
     width: 150%;
     height: 200%;
@@ -295,7 +304,7 @@ button#submitBtn {
 .dropdown-selected {
     padding: 12px 15px;
     font-size: 15px;
-    border: 1px solid #D6CBC5;
+    border: 1px solid var(--border-soft);
     border-radius: 8px;
     background: var(--white);
     color: var(--brand-dark);
@@ -313,7 +322,7 @@ button#submitBtn {
 
 .custom-dropdown.active .dropdown-selected {
     border-color: var(--brand-teal);
-    box-shadow: 0 0 0 3px rgba(42, 92, 107, 0.15);
+    box-shadow: 0 0 0 3px rgba(66, 151, 160, 0.16);
 }
 
 /* FIX: Forces active dropdown to jump over inputs below it */
@@ -327,12 +336,12 @@ button#submitBtn {
     left: 0;
     width: 100%;
     background: var(--white);
-    border: 1px solid #D6CBC5;
+    border: 1px solid var(--border-soft);
     border-radius: 8px;
     margin-top: 5px;
     padding: 0;
     list-style: none;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(15, 44, 62, 0.08);
     z-index: 999;
 
     max-height: 250px;
@@ -347,7 +356,7 @@ button#submitBtn {
 }
 
 .dropdown-options::-webkit-scrollbar-thumb {
-    background: #D6CBC5;
+    background: var(--border-soft);
     border-radius: 4px;
 }
 
@@ -424,7 +433,7 @@ button#submitBtn {
 
     /* 3. Adjust main container padding for smaller screens */
     .container {
-        padding: 20px 15px;
+        padding: 32px 0;
         margin-bottom: 30px;
     }
 

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Become a STEAM-X Scholar</title>
     <meta name="description" content="Apply to the FORCE Career Exploration program for high-school students.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="./style.css"> -->
   <link href="{{asset('cohortregistration/style.css')}}" rel="stylesheet" />
 
