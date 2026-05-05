@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration - FORCE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{asset('assessment/style.css')}}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-banner" aria-hidden="true"></div>
+    </header>
+
+    <div class="brand-strip">
+        <nav class="brand-nav" aria-label="Primary">
+            <a class="header-logo" href="https://forcescholar.com/" aria-label="FORCE home">
+                <img src="{{asset('cohortregistration/2026 FORCE Logo_V6 1 1-Photoroom.png')}}" alt="FORCE logo">
+            </a>
+            <div class="nav-links">
+                <a href="https://forcescholar.com/"><b>Home</b></a>
+            </div>
+        </nav>
+    </div>
+
+    <form id="applicationForm1" class="container" action="{{ route('stripe.create') }}" method="post">
+        <h2 style="text-align: center;">Apply to FORCE Student-Career Assessment</h2>
+        <p class="sub-text" style="text-align: center;">Join the Career Development Lab for high-school students.</p>
+        @csrf
+        <h3>Parent Information</h3>
+        <div class="field">
+            <label>Parent Name</label>
+            <input required name="parentName" placeholder="Enter parent name">
+            <input type="hidden" name="type" value="{{ $type }}">
+        </div>
+
+        <div class="field">
+            <label>Relation with Student</label>
+            <select required name="relation">
+                <option value="">Select</option>
+                <option value="Mother">Mother</option>
+                <option value="Father">Father</option>
+                <option value="Guardian">Guardian</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Highest Education</label>
+            <select required name="education">
+                <option value="">Select</option>
+                <option value="High School">High School</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                <option value="Master's Degree">Master's Degree</option>
+                <option value="PhD">PhD</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <h3>Contact Information</h3>
+        <div class="row phone-row">
+            <div class="field" style="width: 35%; display: flex; flex-direction: column; justify-content: flex-end;">
+                <label>Country Code</label>
+                <select required name="countryCode">
+                    <option value="+91">🇮🇳 India (+91)</option>
+                    <option value="+971">🇦🇪 UAE (+971)</option>
+                    <option value="+966">🇸🇦 Saudi Arabia (+966)</option>
+                    <option value="+974">🇶🇦 Qatar (+974)</option>
+                    <option value="+965">🇰🇼 Kuwait (+965)</option>
+                    <option value="+973">🇧🇭 Bahrain (+973)</option>
+                    <option value="+968">🇴🇲 Oman (+968)</option>
+                    <option value="+1">🇺🇸 USA / Canada (+1)</option>
+                    <option value="+44">🇬🇧 UK (+44)</option>
+                    <option value="+61">🇦🇺 Australia (+61)</option>
+                    <option value="+65">🇸🇬 Singapore (+65)</option>
+                    <option value="+60">🇲🇾 Malaysia (+60)</option>
+                    <option value="+880">🇧🇩 Bangladesh (+880)</option>
+                    <option value="+94">🇱🇰 Sri Lanka (+94)</option>
+                    <option value="+977">🇳🇵 Nepal (+977)</option>
+                    <option value="+92">🇵🇰 Pakistan (+92)</option>
+                    <option value="+62">🇮🇩 Indonesia (+62)</option>
+                    <option value="+63">🇵🇭 Philippines (+63)</option>
+                    <option value="+66">🇹🇭 Thailand (+66)</option>
+                    <option value="+49">🇩🇪 Germany (+49)</option>
+                    <option value="+33">🇫🇷 France (+33)</option>
+                    <option value="+39">🇮🇹 Italy (+39)</option>
+                    <option value="+34">🇪🇸 Spain (+34)</option>
+                    <option value="+31">🇳🇱 Netherlands (+31)</option>
+                    <option value="+27">🇿🇦 South Africa (+27)</option>
+                    <option value="+254">🇰🇪 Kenya (+254)</option>
+                    <option value="+20">🇪🇬 Egypt (+20)</option>
+                    <option value="+234">🇳🇬 Nigeria (+234)</option>
+                    <option value="+other">🌐 Other</option>
+                </select>
+            </div>
+            <div class="field" style="width: 65%;">
+                <label for="whatsapp">WhatsApp Number</label>
+                <input type="tel" required name="whatsapp" placeholder="Phone number" maxlength="10">
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Email Address</label>
+            <input required name="email" type="email" placeholder="Enter email">
+        </div>
+
+        <div class="field">
+            <label>Street Address</label>
+            <input required name="address1" placeholder="Address Line 1">
+        </div>
+
+        <div class="field">
+            <label>Apartment / Suite (optional)</label>
+            <input required name="address2" placeholder="Address Line 2">
+        </div>
+
+        <div class="field">
+            <label>City</label>
+            <input required name="city" placeholder="City">
+        </div>
+
+        <div class="field">
+            <label>State / Province</label>
+            <input required name="state" placeholder="State / Province">
+        </div>
+
+        <div class="field">
+            <label>Postal Code</label>
+            <input required name="zip" placeholder="000 000">
+        </div>
+
+        <div class="field">
+            <label>Country</label>
+            <select required name="country" id="country">
+                <option value="">Select Country</option>
+            </select>
+        </div>
+
+        <h3>Student Details</h3>
+        <div class="field">
+            <label>Student Name</label>
+            <input required name="studentName" placeholder="Enter student name">
+        </div>
+
+        <div class="row">
+            <div class="field" style="width: 50%;">
+                <label>Grade</label>
+                <select required name="grade">
+                    <option value="">Select</option>
+                    <option value="Grade 8">Grade 8</option>
+                    <option value="Grade 9">Grade 9</option>
+                    <option value="Grade 10">Grade 10</option>
+                    <option value="Grade 11">Grade 11</option>
+                    <option value="Grade 12">Grade 12</option>
+                </select>
+            </div>
+            <div class="field" style="width: 50%;">
+                <label>Gender</label>
+                <select required name="gender">
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Non-binary / Other">Non-binary / Other</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field" style="width: 50%;">
+                <label>School Name</label>
+                <input required name="school" placeholder="Enter school name">
+            </div>
+
+            <div class="field" style="width: 50%;">
+                <label>School Board</label>
+                <select required name="board">
+                    <option value="">Select</option>
+                    <option value="CBSE">CBSE</option>
+                    <option value="ICSE">ICSE</option>
+                    <option value="IB">IB</option>
+                    <option value="IGCSE">IGCSE</option>
+                    <option value="State Board">State Board</option>
+                    <option value="NIOS">NIOS</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <h3>Career & Goals</h3>
+        <div class="field">
+            <label>Career Clarity</label>
+            <select required name="careerClarity">
+                <option value="">Select</option>
+                <option value="No idea yet">No idea yet</option>
+                <option value="Some ideas, not sure">Some ideas, not sure</option>
+                <option value="Few options in mind">Few options in mind</option>
+                <option value="Mostly clear">Mostly clear</option>
+                <option value="Very clear">Very clear</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>What do you want your child to gain from FORCE?</label>
+
+            <div class="checkbox-group">
+                <label class="checkbox-item">
+                    <input type="checkbox" value="Career clarity" name="goals[]">
+                    <span class="custom-box"></span>
+                    <span>Career clarity</span>
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" value="Confidence" name="goals[]">
+                    <span class="custom-box"></span>
+                    <span>Confidence</span>
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" value="Real-world skills" name="goals[]">
+                    <span class="custom-box"></span>
+                    <span>Real-world skills</span>
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" value="Exposure" name="goals[]">
+                    <span class="custom-box"></span>
+                    <span>Exposure to industries</span>
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" value="College applications" name="goals[]">
+                    <span class="custom-box"></span>
+                    <span>Strong college applications</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Anything else you'd like us to know?</label>
+            <textarea required name="comments" rows="4" placeholder="Optional..."></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn">
+            <span class="button__text">Continue to Payment</span>
+            <div class="button__filler"></div>
+        </button>
+    </form>
+        <script src="{{asset('assessment/script.js')}}" defer></script>
+
+</body>
+
+</html>

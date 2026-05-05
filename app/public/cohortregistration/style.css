@@ -1,0 +1,370 @@
+:root {
+    --brand-teal: #2a5c6b;
+    --brand-coral: #e88d8d;
+    --brand-dark: #2c3e50;
+    --brand-muted: #51636f;
+    --bg-main: #f4ebe5;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --border-soft: #d6cbc5;
+    --border-strong: #e0d3cc;
+    --white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top left, rgba(232, 141, 141, 0.2), transparent 30%),
+        linear-gradient(180deg, #f8f1ec 0%, var(--bg-main) 45%, #f1e3db 100%);
+    color: var(--brand-dark);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.site-header {
+    background-color: #efe3db;
+}
+
+.header-banner {
+    width: 100%;
+    height: 250px;
+    padding: 0;
+    background-color: #efe3db;
+    background-image: url("./header.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.brand-strip {
+    padding: 18px 8% 0;
+}
+
+.brand-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.header-logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.header-logo img {
+    width: 200px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #5f7f85;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--brand-teal);
+}
+
+.page-content {
+    padding: 32px 16px 64px;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto 60px auto;
+    padding: 20px 40px;
+    background: transparent;
+    box-shadow: none;
+}
+
+.hero {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0 0 10px;
+    color: var(--brand-teal);
+    font-size: 34px;
+    line-height: 1.15;
+}
+
+.sub-text {
+    margin: 0;
+    color: var(--brand-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.form-section {
+    margin-top: 34px;
+}
+
+.form-section h2 {
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-strong);
+    color: var(--brand-coral);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+label,
+legend {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--brand-teal);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--brand-dark);
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--brand-teal);
+    box-shadow: 0 0 0 3px rgba(42, 92, 107, 0.15);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.row--phone {
+    grid-template-columns: minmax(150px, 0.8fr) minmax(0, 1.2fr);
+}
+
+.goals-field {
+    margin: 0 0 20px;
+    padding: 0;
+    border: 0;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    cursor: pointer;
+    color: var(--brand-dark);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.checkbox-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-box {
+    position: relative;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-soft);
+    border-radius: 6px;
+    background: var(--white);
+    transition: all 0.2s ease;
+}
+
+.checkbox-item input:checked+.custom-box {
+    border-color: var(--brand-coral);
+    background: var(--brand-coral);
+}
+
+.custom-box::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.2s ease;
+}
+
+.checkbox-item input:checked+.custom-box::after {
+    transform: rotate(45deg) scale(1);
+}
+
+#submitBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    padding: 18px;
+    overflow: hidden;
+    border: 0;
+    border-radius: 12px;
+    background: var(--brand-coral);
+    box-shadow: 0 12px 24px rgba(232, 141, 141, 0.28);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#submitBtn:hover:not(:disabled),
+#submitBtn:focus-visible:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(232, 141, 141, 0.34);
+}
+
+#submitBtn:disabled {
+    cursor: wait;
+    opacity: 0.8;
+}
+
+#submitBtn .button__text,
+#submitBtn .button__filler {
+    position: relative;
+}
+
+#submitBtn .button__text {
+    z-index: 2;
+}
+
+#submitBtn .button__filler {
+    position: absolute;
+    top: -50%;
+    left: -25%;
+    z-index: 1;
+    width: 150%;
+    height: 200%;
+    border-radius: 50%;
+    background: #d97c7c;
+    transform: translate3d(0, -75%, 0);
+}
+
+#submitBtn.hover-in .button__filler {
+    animation: filler-hover-in 0.5s forwards;
+}
+
+#submitBtn.hover-out .button__filler {
+    animation: filler-hover-out 0.5s forwards;
+}
+
+@keyframes filler-hover-in {
+    from {
+        transform: translate3d(0, -75%, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes filler-hover-out {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, -75%, 0);
+    }
+}
+
+@media (max-width: 720px) {
+    .header-banner {
+        height: 104px;
+    }
+
+    .brand-strip {
+        padding: 16px 5% 0;
+    }
+
+    .container {
+        padding: 28px 18px 32px;
+        border-radius: 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-banner {
+        height: 96px;
+    }
+
+    .brand-nav {
+        gap: 12px;
+        align-items: center;
+    }
+
+    .header-logo {
+        max-height: 44px;
+        overflow: hidden;
+    }
+
+    .header-logo img {
+        width: 140px;
+        margin-top: -4px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .page-content {
+        padding-inline: 12px;
+    }
+
+    .row,
+    .row--phone {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
