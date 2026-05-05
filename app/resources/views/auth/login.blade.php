@@ -17,7 +17,9 @@
   }
 
   .force-login-shell {
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     background-color: #FDFDF9;
   }
 
@@ -25,152 +27,205 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 96px;
-    border-top: 1px solid #0F2C3E;
-    border-bottom: 1px solid #0F2C3E;
+    height: 72px;
+    border-bottom: 1px solid #E0E0E0;
     background: #FFFFFF;
+    flex-shrink: 0;
   }
 
   .force-login-brand img {
-    width: 150px;
+    width: 120px;
     height: auto;
     display: block;
   }
 
+  .force-login-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 32px 24px;
+  }
+
   .force-login-panel {
-    width: min(100% - 48px, 600px);
-    margin: 88px auto 0;
+    width: 100%;
+    max-width: 480px;
   }
 
   .force-login-title {
-    margin: 0 0 24px;
+    margin: 0 0 16px;
+    text-align: center;
     color: #222222;
     font-family: 'IBM Plex Sans', Arial, sans-serif;
-    font-size: 56px;
-    font-weight: 400;
-    line-height: 1.05;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
   }
 
   .force-login-copy {
-    margin: 0 0 32px;
+    margin: 0 0 24px;
+    text-align: center;
     color: #3E3E3E;
-    font-size: 19px;
+    font-size: 16px;
     line-height: 1.5;
   }
 
   .force-login-field {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .force-login-field label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #0F2C3E;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
+    letter-spacing: 0.3px;
   }
 
   .force-login-field .form-control {
     width: 100%;
-    height: 56px;
-    padding: 14px 16px;
-    border: 0;
+    height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #E0E0E0;
     border-radius: 6px;
-    background: #F3F3F3;
+    background: #FFFFFF;
     color: #0F2C3E;
-    font-size: 17px;
+    font-size: 15px;
     box-shadow: none;
+    transition: all 0.2s ease;
+  }
+
+  .force-login-field .form-control::placeholder {
+    color: #999999;
   }
 
   .force-login-field .form-control:focus {
     background: #FFFFFF;
-    outline: 2px solid #4297A0;
-    outline-offset: 0;
-    box-shadow: none;
+    border-color: #FE646F;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(254, 100, 111, 0.1);
   }
 
   .force-login-hint {
-    margin: -4px 0 28px;
+    margin: 8px 0 20px;
+    text-align: center;
     color: #6D6D6D;
-    font-size: 16px;
-    line-height: 1.45;
+    font-size: 14px;
+    line-height: 1.4;
   }
 
   .force-login-submit {
     width: 100%;
-    min-height: 56px;
+    height: 48px;
     border: 0;
-    border-radius: 8px;
+    border-radius: 6px;
     background: #FE646F !important;
     background-image: none !important;
     color: #FFFFFF;
     box-shadow: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .force-login-submit:hover {
+    background: #E8525A !important;
+  }
+
+  .force-login-submit:active {
+    background: #D6434B !important;
   }
 
   .force-login-divider {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 24px;
-    margin: 40px 0;
-    color: #6D6D6D;
-    font-size: 18px;
+    gap: 16px;
+    margin: 24px 0;
+    color: #999999;
+    font-size: 14px;
+    font-weight: 500;
   }
 
   .force-login-divider::before,
   .force-login-divider::after {
     content: "";
     height: 1px;
-    background: #0F2C3E;
+    background: #E0E0E0;
   }
 
   .force-login-secondary {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 56px;
+    height: 48px;
     border: 1px solid #0F2C3E;
-    border-radius: 8px;
-    background-image: none !important;
-    background-clip: initial !important;
-    -webkit-background-clip: initial !important;
+    border-radius: 6px;
+    background: #FFFFFF;
     color: #0F2C3E !important;
     -webkit-text-fill-color: #0F2C3E !important;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .force-login-secondary:hover {
+    background: #F5F5F5;
+    border-color: #0F2C3E;
   }
 
   .force-login-footer-note {
-    margin: 72px 0 0;
+    margin: 20px 0 0;
     text-align: center;
     color: #3E3E3E;
-    font-size: 18px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .force-login-footer-note a {
-    display: inline-block;
-    margin-top: 12px;
     color: #FE646F !important;
     -webkit-text-fill-color: #FE646F !important;
     font-weight: 700;
     text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .force-login-footer-note a:hover {
+    color: #E8525A !important;
+    -webkit-text-fill-color: #E8525A !important;
   }
 
   @media (max-width: 640px) {
     .force-login-brand {
-      min-height: 80px;
+      height: 64px;
+    }
+
+    .force-login-brand img {
+      width: 100px;
+    }
+
+    .force-login-container {
+      padding: 24px 16px;
     }
 
     .force-login-panel {
-      width: min(100% - 32px, 600px);
-      margin-top: 56px;
+      max-width: 100%;
     }
 
     .force-login-title {
-      font-size: 44px;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .force-login-copy {
+      font-size: 14px;
+      margin-bottom: 20px;
     }
   }
 </style>
@@ -184,38 +239,39 @@
     </a>
   </header>
 
-  <section class="force-login-panel" aria-labelledby="force-login-title">
-    <h1 id="force-login-title" class="force-login-title">Sign in</h1>
-    <p class="force-login-copy">Enter your email or mobile number and password to access your FORCE account.</p>
+  <div class="force-login-container">
+    <section class="force-login-panel" aria-labelledby="force-login-title">
+      <h1 id="force-login-title" class="force-login-title">Sign in</h1>
+      <p class="force-login-copy">Enter your email or mobile number and password to access your FORCE account.</p>
 
-    @include('includes/errors/validation-errors')
+      @include('includes/errors/validation-errors')
 
-    <form method="POST" action="{{ route('login') }}">
-      @csrf
-      <div class="force-login-field">
-        <label for="email">Email or Mobile No</label>
-        <input id="email" type="text" name="email" class="form-control" autocomplete="username" required>
-      </div>
+      <form method="POST" action="{{ route('login') }}">
+        @csrf
+        <div class="force-login-field">
+          <label for="email">Email or Mobile No</label>
+          <input id="email" type="text" name="email" class="form-control" autocomplete="username" required>
+        </div>
 
-      <div class="force-login-field">
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password" class="form-control" autocomplete="current-password" required>
-      </div>
+        <div class="force-login-field">
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" class="form-control" autocomplete="current-password" required>
+        </div>
 
-      <p class="force-login-hint">Use the email or mobile number connected to your FORCE registration.</p>
+        <p class="force-login-hint">Use the email or mobile number connected to your FORCE registration.</p>
 
-      <button type="submit" class="force-login-submit">Sign in</button>
+        <button type="submit" class="force-login-submit">Sign in</button>
 
-      <div class="force-login-divider" aria-hidden="true">or</div>
+        <div class="force-login-divider" aria-hidden="true">or</div>
 
-      <a href="{{ route('register') }}" class="force-login-secondary">Sign up for FORCE</a>
-    </form>
+        <p class="force-login-footer-note">
+          New to FORCE?<br>
+          <a href="{{ route('register') }}">Choose your FORCE pathway</a>
+        </p>
 
-    <p class="force-login-footer-note">
-      New to FORCE?
-      <br>
-      <a href="{{ route('register') }}">Choose your FORCE pathway</a>
-    </p>
-  </section>
+        <a href="{{ route('register') }}" class="force-login-secondary">Sign up for FORCE</a>
+      </form>
+    </section>
+  </div>
 </main>
 @endsection
