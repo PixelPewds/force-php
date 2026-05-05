@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply to FORCE Career Exploration</title>
+    <title>Become a STEAM-X Scholar</title>
     <meta name="description" content="Apply to the FORCE Career Exploration program for high-school students.">
     <!-- <link rel="stylesheet" href="./style.css"> -->
   <link href="{{asset('cohortregistration/style.css')}}" rel="stylesheet" />
@@ -29,8 +29,9 @@
         <form id="applicationForm" class="container" action="{{ route('stripe.create') }}" method="post">
             @csrf
             <header class="hero">
-                <h1>Apply to FORCE Career Exploration</h1>
-                <p class="sub-text">Join the Career Development Lab for high-school students.</p>
+                <h1>Become a STEAM-X Scholar</h1>
+                <p class="sub-text">A guided program for high-school students to explore 21st-century interdisciplinary careers, build real-world projects, and develop the confidence to make better career choices.</p>
+                <p class="sub-text"><em>Best for students ready for deeper career exploration, projects, mentoring, and skill-building.</em></p>
             </header>
 
             <section class="form-section" aria-labelledby="parent-information-title">
@@ -261,7 +262,7 @@
             </section>
 
             <button id="submitBtn" type="submit">
-                <span class="button__text">Continue to Payment</span>
+                <span class="button__text">Apply for the Lab</span>
                 <span class="button__filler" aria-hidden="true"></span>
             </button>
         </form>

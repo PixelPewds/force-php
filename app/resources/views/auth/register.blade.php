@@ -10,7 +10,7 @@
             <div class="card z-index-0 fadeIn3 fadeInBottom">
               <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div class="bg-gradient-light shadow-dark border-radius-lg py-3 pe-1">
-                  <h4 class="font-weight-bolder text-center mt-2 mb-0" style="color:black;">Register with Force</h4>                  
+                  <h4 class="font-weight-bolder text-center mt-2 mb-0" style="color:black;">Choose your FORCE Pathway</h4>                  
                 </div>
               </div>
               <div class="card-body mb-4 mt-4">
@@ -23,8 +23,9 @@
                 <div class="card z-index-0 fadeIn3 fadeInBottom" style="height:100%;    box-shadow: 0 1px 2px 0 rgb(126 211 69);
     border: 1px solid #d81818;">               
                   <div class="card-body">
-                    <h4 style="text-align: center;">Apply to FORCE Student-Career Assessment</h4>
-                      <p class="sub-text" style="text-align: center;">Join the Career Development Lab for high-school students.</p>
+                    <h4 style="text-align: center;">Student Career Profile Assessment</h4>
+                      <p class="sub-text" style="text-align: center;">Discover your child’s interests, strengths, and career direction through a structured student profile assessment.</p>
+                      <p class="sub-text" style="text-align: center;"><em>Best for students who want clarity before choosing a program or career pathway.</em></p>
                   </div>
                 </div>
               </a>
@@ -35,8 +36,9 @@
                 <div class="card z-index-0 fadeIn3 fadeInBottom" style="height:100%;    box-shadow: 0 1px 2px 0 rgb(126 211 69);
     border: 1px solid #d81818;">               
                   <div class="card-body">
-                    <h4 style="text-align: center;">Apply to FORCE Career Exploration</h4><br>
-                      <p class="sub-text" style="text-align: center;">Join the Career Development Lab for high-school students.</p>
+                    <h4 style="text-align: center;">Become a STEAM-X Scholar</h4><br>
+                      <p class="sub-text" style="text-align: center;">A guided program for high-school students to explore 21st-century interdisciplinary careers, build real-world projects, and develop the confidence to make better career choices.</p>
+                      <p class="sub-text" style="text-align: center;"><em>Best for students ready for deeper career exploration, projects, mentoring, and skill-building.</em></p>
                   </div>
                 </div>
               </a>

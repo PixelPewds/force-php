@@ -27,8 +27,9 @@
     </div>
 
     <form id="applicationForm1" class="container" action="{{ route('stripe.create') }}" method="post">
-        <h2 style="text-align: center;">Apply to FORCE Student-Career Assessment</h2>
-        <p class="sub-text" style="text-align: center;">Join the Career Development Lab for high-school students.</p>
+        <h2 style="text-align: center;">Student Career Profile Assessment</h2>
+        <p class="sub-text" style="text-align: center;">Discover your child’s interests, strengths, and career direction through a structured student profile assessment.</p>
+        <p class="sub-text" style="text-align: center;"><em>Best for students who want clarity before choosing a program or career pathway.</em></p>
         @csrf
         <h3>Parent Information</h3>
         <div class="field">
@@ -244,7 +245,7 @@
         </div>
 
         <button type="submit" id="submitBtn">
-            <span class="button__text">Continue to Payment</span>
+            <span class="button__text">Start Assessment</span>
             <div class="button__filler"></div>
         </button>
     </form>
