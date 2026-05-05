@@ -16,90 +16,206 @@
     font-family: 'Barlow', Arial, sans-serif;
   }
 
-  .force-auth-page {
+  .force-login-shell {
+    min-height: 100vh;
     background-color: #FDFDF9;
   }
 
-  .force-auth-page .mask {
-    display: none;
+  .force-login-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 96px;
+    border-top: 1px solid #0F2C3E;
+    border-bottom: 1px solid #0F2C3E;
+    background: #FFFFFF;
   }
 
-  .force-auth-card {
-    border: 1px solid #E7E2DA;
-    border-radius: 12px;
+  .force-login-brand img {
+    width: 150px;
+    height: auto;
+    display: block;
+  }
+
+  .force-login-panel {
+    width: min(100% - 48px, 600px);
+    margin: 88px auto 0;
+  }
+
+  .force-login-title {
+    margin: 0 0 24px;
+    color: #222222;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.05;
+  }
+
+  .force-login-copy {
+    margin: 0 0 32px;
+    color: #3E3E3E;
+    font-size: 19px;
+    line-height: 1.5;
+  }
+
+  .force-login-field {
+    margin-bottom: 18px;
+  }
+
+  .force-login-field label {
+    display: block;
+    margin-bottom: 10px;
+    color: #0F2C3E;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .force-login-field .form-control {
+    width: 100%;
+    height: 56px;
+    padding: 14px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: #F3F3F3;
+    color: #0F2C3E;
+    font-size: 17px;
     box-shadow: none;
-    overflow: hidden;
   }
 
-  .force-auth-heading {
-    background: #0F2C3E;
+  .force-login-field .form-control:focus {
+    background: #FFFFFF;
+    outline: 2px solid #4297A0;
+    outline-offset: 0;
+    box-shadow: none;
+  }
+
+  .force-login-hint {
+    margin: -4px 0 28px;
+    color: #6D6D6D;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .force-login-submit {
+    width: 100%;
+    min-height: 56px;
+    border: 0;
     border-radius: 8px;
-    box-shadow: none;
-  }
-
-  .force-auth-heading h4 {
-    color: #FFFFFF;
-  }
-
-  .force-auth-card label {
-    color: #4297A0;
-  }
-
-  .force-auth-card .btn {
     background: #FE646F !important;
     background-image: none !important;
-    border-radius: 8px;
+    color: #FFFFFF;
     box-shadow: none;
+    font-size: 18px;
+    font-weight: 700;
   }
 
-  .force-auth-card .text-gradient {
-    background-image: none;
-    color: #4297A0 !important;
+  .force-login-divider {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    margin: 40px 0;
+    color: #6D6D6D;
+    font-size: 18px;
+  }
+
+  .force-login-divider::before,
+  .force-login-divider::after {
+    content: "";
+    height: 1px;
+    background: #0F2C3E;
+  }
+
+  .force-login-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    border: 1px solid #0F2C3E;
+    border-radius: 8px;
+    background-image: none !important;
+    background-clip: initial !important;
+    -webkit-background-clip: initial !important;
+    color: #0F2C3E !important;
+    -webkit-text-fill-color: #0F2C3E !important;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .force-login-footer-note {
+    margin: 72px 0 0;
+    text-align: center;
+    color: #3E3E3E;
+    font-size: 18px;
+  }
+
+  .force-login-footer-note a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #FE646F !important;
+    -webkit-text-fill-color: #FE646F !important;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  @media (max-width: 640px) {
+    .force-login-brand {
+      min-height: 80px;
+    }
+
+    .force-login-panel {
+      width: min(100% - 32px, 600px);
+      margin-top: 56px;
+    }
+
+    .force-login-title {
+      font-size: 44px;
+    }
   }
 </style>
 @endsection
 
 @section('content')
-<main class="main-content  mt-0">
-    <div class="page-header align-items-start min-vh-100 force-auth-page">
-      <span class="mask bg-gradient-dark-1 opacity-6"></span>
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-4 col-md-8 col-12 mx-auto">
-            <div class="card z-index-0 fadeIn3 fadeInBottom force-auth-card">
-              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <div class="force-auth-heading py-3 pe-1">
-                  <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign in</h4>                  
-                </div>
-              </div>
-              <div class="card-body">
-                @include('includes/errors/validation-errors')
-                <form method="POST" action="{{ route('login') }}">
-                  @csrf                  
-                  <div class="input-group input-group-static my-3">
-                    <label class="ms-0">Email or Mobile No</label>
-                    <input type="text" name="email" class="form-control" required>
-                  </div>
-                  <div class="input-group input-group-static my-3">
-                    <label class="ms-0">Password</label>
-                    <input type="password" name="password" class="form-control" required>
-                  </div>
-                  <div class="text-center">
-                    <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign in</button>
-                  </div>
-                  <p class="mt-4 text-sm text-center">
-                    Don't have an account?
-                    <a href="{{ route('register') }}" class="text-primary text-gradient font-weight-bold">Sign up</a>
-                  </p>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+<main class="main-content mt-0 force-login-shell">
+  <header class="force-login-brand">
+    <a href="https://forcescholar.com/" aria-label="FORCE home">
+      <img src="{{ asset('cohortregistration/2026 FORCE Logo_V6 1 1-Photoroom.png') }}" alt="FORCE">
+    </a>
+  </header>
+
+  <section class="force-login-panel" aria-labelledby="force-login-title">
+    <h1 id="force-login-title" class="force-login-title">Sign in</h1>
+    <p class="force-login-copy">Enter your email or mobile number and password to access your FORCE account.</p>
+
+    @include('includes/errors/validation-errors')
+
+    <form method="POST" action="{{ route('login') }}">
+      @csrf
+      <div class="force-login-field">
+        <label for="email">Email or Mobile No</label>
+        <input id="email" type="text" name="email" class="form-control" autocomplete="username" required>
       </div>
 
-      @include('includes/footer-text')
+      <div class="force-login-field">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" class="form-control" autocomplete="current-password" required>
+      </div>
 
-    </div>
+      <p class="force-login-hint">Use the email or mobile number connected to your FORCE registration.</p>
+
+      <button type="submit" class="force-login-submit">Sign in</button>
+
+      <div class="force-login-divider" aria-hidden="true">or</div>
+
+      <a href="{{ route('register') }}" class="force-login-secondary">Sign up for FORCE</a>
+    </form>
+
+    <p class="force-login-footer-note">
+      New to FORCE?
+      <br>
+      <a href="{{ route('register') }}">Choose your FORCE pathway</a>
+    </p>
+  </section>
 </main>
 @endsection
